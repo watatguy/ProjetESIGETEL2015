@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane disable="false" focusTraversable="false" prefHeight="-1.0" prefWidth="-1.0" visible="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controlleur.Controler">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox disable="false" fillHeight="true" focusTraversable="false" layoutX="0.0" layoutY="0.0" pickOnBounds="true" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <VBox prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <ImageView fitHeight="320.9999691149685" fitWidth="427.9999694824219" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../acceuil.jpg" />
+              </image>
+            </ImageView>
+            <TabPane fx:id="manuel_auto" prefHeight="253.0" prefWidth="428.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="manuel" closable="false" text="Manuel">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <VBox alignment="CENTER" prefHeight="222.0" prefWidth="428.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <children>
+                            <ComboBox fx:id="foundController" minHeight="20.0" prefWidth="286.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="428.0" spacing="20.0">
+                              <children>
+                                <ToggleButton fx:id="startmanuel" mnemonicParsing="false" onAction="#joystictTabControl" prefHeight="33.0" prefWidth="106.0" text="Start" textFill="#319900">
+                                  <font>
+                                    <Font name="DejaVu Sans Condensed Bold" size="16.0" fx:id="x3" />
+                                  </font>
+                                </ToggleButton>
+                                <ToggleButton fx:id="recordmanuel" font="$x3" mnemonicParsing="false" onAction="#joystickRecord" prefHeight="33.0" prefWidth="106.0" text="Record" textFill="RED" />
+                                <ToggleButton fx:id="replaymanuel" disable="false" font="$x3" mnemonicParsing="false" onAction="#joystickReplay" prefHeight="33.0" prefWidth="106.0" text="Replay" textFill="#1000cc" />
+                              </children>
+                            </HBox>
+                          </children>
+                        </VBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="automatique" closable="false" text="Automatique">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <HBox blendMode="SRC_OVER" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <ToolBar minHeight="33.0" prefHeight="33.0" prefWidth="428.0">
+                  <items>
+                    <Label alignment="CENTER" contentDisplay="LEFT" prefHeight="37.0" prefWidth="73.00009999999747" text="Simulation :" textAlignment="LEFT" textOverrun="ELLIPSIS">
+                      <font>
+                        <Font name="Aharoni Bold" size="12.0" fx:id="x1" />
+                      </font>
+                    </Label>
+                    <Button fx:id="playSim" blendMode="SRC_OVER" contentDisplay="GRAPHIC_ONLY" font="$x1" minHeight="21.999900000002526" minWidth="23.0" mnemonicParsing="false" onAction="#startSim" prefHeight="22.0" prefWidth="26.0" text="play" wrapText="false">
+                      <graphic>
+                        <ImageView fitHeight="23.5999988787102" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../../play.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="pauseSim" blendMode="SRC_OVER" contentDisplay="GRAPHIC_ONLY" font="$x1" minHeight="21.999900000002526" minWidth="23.0" mnemonicParsing="false" onAction="#pauseSim" prefHeight="22.0" prefWidth="26.0" text="pause" wrapText="false">
+                      <graphic>
+                        <ImageView fitHeight="23.5999988787102" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../../pause.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Button fx:id="stopSim" blendMode="SRC_OVER" contentDisplay="GRAPHIC_ONLY" font="$x1" minHeight="21.999900000002526" minWidth="23.0" mnemonicParsing="false" onAction="#stopSim" prefHeight="22.0" prefWidth="26.0" text="stop" wrapText="false">
+                      <graphic>
+                        <ImageView fitHeight="23.5999988787102" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../../stop.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                    </Button>
+                    <Separator orientation="VERTICAL" prefHeight="200.0" />
+                    <Label alignment="CENTER" blendMode="SRC_OVER" prefWidth="143.0" text="00 : 00 : 00" textAlignment="LEFT" textOverrun="ELLIPSIS" underline="false" />
+                    <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  </items>
+                </ToolBar>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <Separator orientation="VERTICAL" prefHeight="508.0" />
+        <VBox prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <TitledPane animated="false" minWidth="190.0" prefHeight="-1.0" prefWidth="-1.0" text="untitled">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <VBox layoutX="0.0" layoutY="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <Label fx:id="handleLab" alignment="CENTER_LEFT" prefHeight="33.000099999997474" prefWidth="204.0" text="Handle :">
+                          <font>
+                            <Font name="System Bold" size="8.0" fx:id="x2" />
+                          </font>
+                        </Label>
+                        <Label fx:id="positionLab" alignment="CENTER_LEFT" font="$x2" prefHeight="33.000099999997474" prefWidth="204.0" text="Position :" />
+                        <Label fx:id="orientationLab" alignment="CENTER_LEFT" font="$x2" prefHeight="33.000099999997474" prefWidth="204.0" text="Orientation :" />
+                      </children>
+                    </VBox>
+                  </children>
+                </AnchorPane>
+              </content>
+            </TitledPane>
+            <ListView fx:id="listName" editable="true" onMouseClicked="#selectionChanged1" prefHeight="400.9998779296875" prefWidth="204.0" />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>
